@@ -1,0 +1,26 @@
+<!-- templates/wait.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ action }} VM</title>
+    <!-- Link para o Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Link para o CSS personalizado -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="bg-light">
+    <div class="container text-center mt-5">
+        <h1>{{ action }} VM...</h1>
+        <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Carregando...</span>
+        </div>
+        <p class="mt-3">Por favor, aguarde enquanto a VM é {{ action.lower() }}.</p>
+    </div>
+    <script>
+        setTimeout(function(){
+            window.location.href = "{{ url_for('index') }}";
+        }, 10000);  // Redireciona após 10 segundos
+    </script>
+</body>
+</html>

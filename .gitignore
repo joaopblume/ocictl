@@ -2,3 +2,4 @@ venv/
 config
 config.py
 *.pem
+__pycache__
