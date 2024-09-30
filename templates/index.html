@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Status da VM</title>
+</head>
+<body>
+    <h1>Status da VM: {{ status }}</h1>
+    {% if status != 'RUNNING' %}
+        <a href="{{ url_for('start') }}">Ligar VM</a>
+    {% else %}
+        <a href="{{ url_for('stop') }}">Desligar VM</a>
+    {% endif %}
+</body>
+</html>
