@@ -8,7 +8,7 @@ from config import instance_id
 app = Flask(__name__)
 
 # Configuração da OCI
-config = oci.config.from_file('/home/joao/python/ocictl/config')
+config = oci.config.from_file('/app/config')
 compute_client = oci.core.ComputeClient(config)
 
 # Substitua pelo ID da sua instância
@@ -51,4 +51,4 @@ def get_status():
     return jsonify({'status': status})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
